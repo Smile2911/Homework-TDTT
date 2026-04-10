@@ -1,16 +1,16 @@
-
+A1:
 def Max_Of_Two(a, b):
     return max(a,b)
 x,y = map(int,input().split())
 print(Max_Of_Two(x,y))
-
+A2:
 a,b = map(int,input().split())
 def Swap():
     global a,b
     a,b = b,a
     print(a,b)
 Swap()
-
+A3:
 def isPrime(x):
     if x < 2:
         return False
@@ -28,7 +28,7 @@ if isPrime(n):
     print("True")
 else:
     print("False")
-
+A4:
 def isPerfect(x):
     if x < 6:
         return False
@@ -47,7 +47,7 @@ if isPerfect(n):
     print("True")
 else:
     print("False")
-
+A5:
 input_list = input()
 k = int(input())
 check = False
@@ -60,7 +60,7 @@ for x in numbers:
         break
 if check == False:
     print(-1)
-
+A6:
 def calc(x):
     if x < 0:
         print("no value")
@@ -72,7 +72,7 @@ def calc(x):
         print(res)
 n = int(input())
 calc(n)
-
+A7:
 def calc(num1,num2,operat):
     if operat == '+':
         res = num1 + num2
@@ -91,7 +91,7 @@ num1 = float(lostr[0])
 num2 = float(lostr[2])
 operat = lostr[1]
 print(calc(num1,num2,operat))
-
+A8:
 def bits(x):
     res = ""
     while x != 0:
@@ -109,7 +109,7 @@ while len(y) < len(x):
 for i in range(len(x)):
     fin += abs(int(x[i])-int(y[i]))
 print(fin)
-
+A9:
 def calc(x):
     res = 0
     while x != 0:
@@ -118,7 +118,7 @@ def calc(x):
     return res
 n = int(input())
 print(calc(n))
-
+A10:
 def check(a,b):
     a_to_b = {}
     b_mapped_to = set()
