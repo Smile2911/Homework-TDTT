@@ -1,0 +1,138 @@
+
+def Max_Of_Two(a, b):
+    return max(a,b)
+x,y = map(int,input().split())
+print(Max_Of_Two(x,y))
+
+a,b = map(int,input().split())
+def Swap():
+    global a,b
+    a,b = b,a
+    print(a,b)
+Swap()
+
+def isPrime(x):
+    if x < 2:
+        return False
+    if x < 4:
+        return True
+    if x % 2 == 0 or x % 3 == 0:
+        return False
+    i = 5
+    for i in range(5,int(x**0,5) + 1,6):
+        if x % i == 0 or x % (i+2) == 0:
+            return False
+    return True
+n = int(input())
+if isPrime(n):
+    print("True")
+else:
+    print("False")
+
+def isPerfect(x):
+    if x < 6:
+        return False
+    res = 1
+    for i in range(2,int(x**0.5)+1,1):
+        if x % i == 0:
+            if i * i == x:
+                res += i
+            else:
+                res += i + x//i
+    if res == x:
+        return True
+    return False
+n = int(input())
+if isPerfect(n):
+    print("True")
+else:
+    print("False")
+
+input_list = input()
+k = int(input())
+check = False
+list_of_string = input_list.split()
+numbers = [int(x) for x in list_of_string]
+for x in numbers:
+    if x == k:
+        print(numbers.index(x) + 1)
+        check = True
+        break
+if check == False:
+    print(-1)
+
+def calc(x):
+    if x < 0:
+        print("no value")
+    else:
+        res = 1
+        while x != 1:
+            res *= x
+            x -= 1
+        print(res)
+n = int(input())
+calc(n)
+
+def calc(num1,num2,operat):
+    if operat == '+':
+        res = num1 + num2
+    elif operat == '-':
+        res = num1 - num2
+    elif operat == '*':
+        res = num1 * num2
+    elif operat == '/':
+        res = num1 / num2
+    return "{:.2f}".format(res)
+s = input()
+fnum = ""
+snum = ""
+lostr = s.split()
+num1 = float(lostr[0])
+num2 = float(lostr[2])
+operat = lostr[1]
+print(calc(num1,num2,operat))
+
+def bits(x):
+    res = ""
+    while x != 0:
+        res = str(x%2) + res
+        x //= 2
+    return res
+a,b = map(int,input().split())
+x = bits(a)
+y = bits(b)
+fin = 0
+while len(x) < len(y):
+    x = '0' + x
+while len(y) < len(x):
+    y = '0' + y
+for i in range(len(x)):
+    fin += abs(int(x[i])-int(y[i]))
+print(fin)
+
+def calc(x):
+    res = 0
+    while x != 0:
+        res += x%10
+        x //= 10
+    return res
+n = int(input())
+print(calc(n))
+
+def check(a,b):
+    a_to_b = {}
+    b_mapped_to = set()
+    for char_a,char_b in zip(a,b):
+        if char_a in a_to_b:
+            if a_to_b[char_a] != char_b:
+                return False
+        elif char_b in b_mapped_to:
+            return False
+        a_to_b[char_a] = char_b
+        b_mapped_to.add(char_b)
+    return True
+x,y = input().split()
+if check(x,y):
+    print('true')
+else:
+    print('false')
